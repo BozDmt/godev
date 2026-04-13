@@ -9,6 +9,8 @@
   --accent: #7c3aed;
   --accent2: #22c55e;
   --shadow: rgba(0, 0, 0, 0.35) 0 18px 50px -20px;
+  --waveLine: clamp(6px, 0.9vw, 10px);
+  --waveGap: calc(var(--waveLine) * 4);
 
   --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
     "Apple Color Emoji", "Segoe UI Emoji";
@@ -39,6 +41,11 @@ body {
   background:
     radial-gradient(900px 600px at 10% 10%, rgba(124, 58, 237, 0.35), transparent 60%),
     radial-gradient(700px 500px at 90% 25%, rgba(34, 197, 94, 0.22), transparent 60%),
+    repeating-radial-gradient(
+      1200px 260px at 50% 92%,
+      rgba(34, 197, 94, 0.16) 0 var(--waveLine),
+      rgba(34, 197, 94, 0) var(--waveLine) calc(var(--waveLine) + var(--waveGap))
+    ),
     linear-gradient(180deg, var(--bg), var(--bg2));
 }
 
